@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Display Board Firmware | Alex Miyazawa</title>
+  <meta name="description" content="Display board firmware for Georgia Tech Solar Racing's car Halo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a href="index.html" class="name">Alex Miyazawa</a>
+      <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="goals.html">Career Goals</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="wrap narrow">
+      <section class="page-top">
+        <p class="back"><a href="projects.html">← Projects</a></p>
+        <div class="kicker" style="margin-top:22px;">Georgia Tech Solar Racing · Fall 2026</div>
+        <h1>Display board firmware</h1>
+        <p class="muted" style="margin-top:12px; font-size:19px;">Updating the driver display on Halo, the team's new solar car.</p>
+        <ul class="meta">
+          <li><b>Role</b>Recruit project, with a partner</li>
+          <li><b>Platform</b>TI Tiva, moving to STMLib</li>
+          <li><b>Tools</b>C, CANalyzer</li>
+        </ul>
+      </section>
+
+      <section class="block article">
+        <figure class="wide" style="margin-top:0;">
+          <img src="images/display-board.jpg" alt="Solar car display board on a workbench" />
+          <figcaption>The display board on the bench. It shows speed, current, pack voltage and temperature, and which systems on the car are online.</figcaption>
+        </figure>
+
+        <h2 style="margin-top:20px;">Background</h2>
+        <p>
+          The team's previous car, SR4 "Aurora," was the only four-person vehicle in its race, and Georgia Tech won
+          with it. Its driver display ran on a TI Tiva microcontroller. For the new car, Halo, a lot changed, including
+          the main structure, and the display needed updates too.
+        </p>
+
+        <h2>What we changed</h2>
+        <p>
+          The display is the driver's main view of the car: speed, current draw, pack voltage and temperature, and
+          the status of systems like the BMS, GPS, and telemetry. We updated fonts and parts of the layout to match
+          what the drivers wanted and to keep up with changes in competition rules. This was my recruit project, and I
+          did it with a partner.
+        </p>
+
+        <h2>How we tested it</h2>
+        <p>
+          We edited the Tiva code, flashed it to the display board, and tested it on the bench over and over, using
+          CANalyzer to see what was happening on the car's CAN bus. It was my first time testing firmware on real hardware.
+        </p>
+        <p>
+          I also had to learn how the codebase is laid out. Things like the 320×240 screen size, the 250 kbps CAN bus
+          speed, and separate refresh rates for critical and non-critical information are all set in a shared
+          definitions file that the rest of the code depends on.
+        </p>
+        <figure class="screenshot">
+          <img src="images/display-code.png" alt="Display firmware definitions file" />
+          <figcaption>Part of the definitions file: screen size, CAN baud rate, and refresh rates.</figcaption>
+        </figure>
+
+        <h2>What's next</h2>
+        <p>
+          Only a few people still on the team know Tiva well, so we're porting the firmware to STMLib, which more
+          members can work with. After that, the plan is to design a new PCB and schematic for the display board
+          from scratch next semester.
+        </p>
+
+        <p style="margin-top:40px;" class="back"><a href="projects.html">← Back to projects</a></p>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Alex Miyazawa · Georgia Tech EE · <span class="year"></span></span>
+      <span><a href="mailto:hmiyazawa6@gatech.edu">Email</a><a href="https://www.linkedin.com/in/alex-miyazawa">LinkedIn</a><a href="resume.pdf">Resume (PDF)</a></span>
+    </div>
+  </footer>
+
+  <script>document.querySelector(".year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analog Sensor Board | Alex Miyazawa</title>
+  <meta name="description" content="Assembling an analog sensor board for Georgia Tech Solar Racing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a href="index.html" class="name">Alex Miyazawa</a>
+      <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="goals.html">Career Goals</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="wrap narrow">
+      <section class="page-top">
+        <p class="back"><a href="projects.html">← Projects</a></p>
+        <div class="kicker" style="margin-top:22px;">Georgia Tech Solar Racing · Fall 2026</div>
+        <h1>Analog sensor board</h1>
+        <p class="muted" style="margin-top:12px; font-size:19px;">Taking a bare PCB to a finished, tested board.</p>
+        <ul class="meta">
+          <li><b>Role</b>Assembly and testing</li>
+          <li><b>Methods</b>Solder paste, reflow, hand soldering</li>
+          <li><b>Tools</b>KiCad, multimeter, hot plate</li>
+        </ul>
+      </section>
+
+      <section class="block article">
+        <figure class="tall" style="margin-top:0;">
+          <img src="images/sensor-board.jpg" alt="Assembled analog sensor board" />
+          <figcaption>The analog sensor board after assembly.</figcaption>
+        </figure>
+
+        <h2 style="margin-top:20px;">The task</h2>
+        <p>
+          Another team member designed this board. My job was to build it: take the bare PCB and get every
+          component on it, including resistors, capacitors, transistors, diodes, switches, USB ports, and the STM
+          microcontroller.
+        </p>
+
+        <h2>How it went</h2>
+        <p>
+          I started by applying solder paste, placing the parts, and running the board through the reflow oven. That
+          got a lot of the parts connected, but when I checked the board with a multimeter, some connections weren't
+          made and a few parts had the wrong values.
+        </p>
+        <p>
+          So I went through it with a soldering iron, reworking joints and swapping parts where needed. For each
+          component I checked continuity with the multimeter against the KiCad layout, making sure every GND pin
+          connected to the other GND pins, every 5V pin to the other 5V pins, and so on.
+        </p>
+
+        <h2>What I learned</h2>
+        <p>
+          I made a lot of mistakes on this board, and that's where most of the learning came from. I now know my way
+          around solder paste, the reflow oven, the hot plate, and hand soldering, and how to debug a board
+          methodically against its design files. On the next one I'm aiming to be faster and more precise.
+        </p>
+
+        <p style="margin-top:40px;" class="back"><a href="projects.html">← Back to projects</a></p>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Alex Miyazawa · Georgia Tech EE · <span class="year"></span></span>
+      <span><a href="mailto:hmiyazawa6@gatech.edu">Email</a><a href="https://www.linkedin.com/in/alex-miyazawa">LinkedIn</a><a href="resume.pdf">Resume (PDF)</a></span>
+    </div>
+  </footer>
+
+  <script>document.querySelector(".year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

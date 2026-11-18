@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Miyazawa</title>
+  <meta name="description" content="Alex Miyazawa, Electrical Engineering student at Georgia Tech interested in chip design and semiconductors." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a href="index.html" class="name">Alex Miyazawa</a>
+      <nav>
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="goals.html">Career Goals</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="wrap">
+      <section class="intro">
+        <div>
+          <h1>Alex Miyazawa</h1>
+          <p class="sub">Electrical Engineering · Georgia Tech · Class of 2030</p>
+          <p style="margin-top:24px;">
+            Welcome! I'm a first-year Electrical Engineering student at Georgia Tech pursuing the Circuit Technology
+            and Electronic Devices threads. I'm especially interested in chip design and the semiconductor industry,
+            and I'm currently building hands-on hardware and firmware experience as a member of the Georgia Tech
+            Solar Racing team.
+          </p>
+          <p>
+            Looking ahead, I plan to get involved in undergraduate research and pursue internships so I can apply what
+            I learn in class to real engineering problems and build a long-term career in electrical engineering.
+          </p>
+          <p class="mono" style="font-size:14px;">
+            <a href="resume.html">Resume</a> · <a href="https://www.linkedin.com/in/alex-miyazawa">LinkedIn</a> · <a href="mailto:hmiyazawa6@gatech.edu">hmiyazawa6@gatech.edu</a>
+          </p>
+        </div>
+        <figure class="portrait" style="margin:0;">
+          <img src="images/headshot.jpg" alt="Alex Miyazawa" />
+          <figcaption>At CREATE-X, Georgia Tech</figcaption>
+        </figure>
+      </section>
+
+      <section class="block">
+        <h2>Projects</h2>
+        <ul class="project-list">
+      <li>
+        <a href="discovery-project.html"><img src="images/discovery-hero.jpg" alt="Wokwi model of my alarm clock circuit" /></a>
+        <div>
+          <div class="kicker">Discovery Project · Fall 2026</div>
+          <h3><a href="discovery-project.html">Arduino digital alarm clock</a></h3>
+          <p>My first project of my own. It's a digital clock with an alarm, running on an Arduino Nano. I wrote the
+             firmware as a state machine, tested it in the Wokwi simulator, and I'm now wiring it up on a breadboard.</p>
+          <div class="tools">Arduino · C++ · Wokwi · DS1307 RTC · TM1637 display · GitHub</div>
+        </div>
+      </li>
+      <li>
+        <a href="display-board.html"><img src="images/display-board.jpg" alt="Solar car driver display board" /></a>
+        <div>
+          <div class="kicker">Solar Racing · Fall 2026</div>
+          <h3><a href="display-board.html">Display board firmware</a></h3>
+          <p>A partner and I updated the driver display firmware for Halo, the team's new car, and tested each change on the bench with CANalyzer.</p>
+          <div class="tools">C · TI Tiva · CAN bus · CANalyzer</div>
+        </div>
+      </li>
+      <li>
+        <a href="sensor-board.html"><img src="images/sensor-board.jpg" alt="Analog sensor board" /></a>
+        <div>
+          <div class="kicker">Solar Racing · Fall 2026</div>
+          <h3><a href="sensor-board.html">Analog sensor board</a></h3>
+          <p>I assembled an analog sensor board from a bare PCB, then tracked down every bad joint and wrong part with a multimeter and the KiCad layout.</p>
+          <div class="tools">Solder paste · Reflow oven · Hand soldering · KiCad · Multimeter</div>
+        </div>
+      </li>
+        </ul>
+        <p style="margin-top:10px;"><a href="projects.html">See all projects and what's coming next</a></p>
+      </section>
+
+      <section class="block" id="contact">
+        <h2>Contact</h2>
+        <p>Email is the best way to reach me: <a href="mailto:hmiyazawa6@gatech.edu">hmiyazawa6@gatech.edu</a>.
+           You can also find me on <a href="https://www.linkedin.com/in/alex-miyazawa">LinkedIn</a>.</p>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Alex Miyazawa · Georgia Tech EE · <span class="year"></span></span>
+      <span><a href="mailto:hmiyazawa6@gatech.edu">Email</a><a href="https://www.linkedin.com/in/alex-miyazawa">LinkedIn</a><a href="resume.pdf">Resume (PDF)</a></span>
+    </div>
+  </footer>
+
+  <script>document.querySelector(".year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

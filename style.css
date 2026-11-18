@@ -1,0 +1,135 @@
+/* ---------------------------------------------------------
+   Alex Miyazawa — site styles
+   Colors are Georgia Tech navy + gold.
+   --------------------------------------------------------- */
+:root {
+  --paper: #fbfaf6;
+  --ink: #1f2328;
+  --muted: #5b626b;
+  --rule: #e2dfd6;
+  --navy: #003057;
+  --gold: #b3a369;
+  --gold-light: #efe9d6;
+  --max: 980px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.7;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--navy); text-decoration-color: var(--gold); text-underline-offset: 3px; text-decoration-thickness: 2px; }
+a:hover { text-decoration-color: var(--navy); }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+.narrow { max-width: 720px; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+
+/* ---------- Top bar ---------- */
+.topbar { border-bottom: 3px solid var(--gold); background: #fff; }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 62px; flex-wrap: wrap; }
+.topbar .name { font-weight: 700; font-size: 18px; color: var(--navy); text-decoration: none; }
+.topbar ul { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+.topbar ul a { color: var(--muted); text-decoration: none; font-size: 15px; }
+.topbar ul a:hover { color: var(--navy); }
+.topbar ul a[aria-current="page"] { color: var(--navy); font-weight: 600; }
+
+/* ---------- Type ---------- */
+h1 { font-size: clamp(36px, 5vw, 50px); line-height: 1.1; color: var(--navy); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 26px; color: var(--navy); font-weight: 700; margin-bottom: 14px; }
+h3 { font-size: 18px; font-weight: 600; margin: 28px 0 6px; }
+p { margin-bottom: 14px; }
+.muted { color: var(--muted); }
+.sub { font-family: "IBM Plex Mono", monospace; font-size: 14px; color: var(--muted); margin-top: 10px; }
+.kicker { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: #8a7a3d; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+ul.bullets { padding-left: 20px; margin-bottom: 14px; }
+ul.bullets li { margin-bottom: 6px; }
+
+/* ---------- Layout blocks ---------- */
+.page-top { padding: 56px 0 28px; }
+.block { padding: 36px 0; border-top: 1px solid var(--rule); }
+.page-top + .block { border-top: none; padding-top: 8px; }
+.intro { display: grid; grid-template-columns: 1fr 300px; gap: 56px; align-items: start; padding: 64px 0 40px; }
+.intro p { max-width: 58ch; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
+.side-photo { display: grid; grid-template-columns: 1fr 320px; gap: 44px; align-items: start; }
+
+/* ---------- Photos ---------- */
+figure { margin: 26px 0; }
+figure img { width: 100%; border-radius: 4px; }
+figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+.portrait img { aspect-ratio: 4 / 5; object-fit: cover; }
+.wide img { aspect-ratio: 16 / 9; object-fit: cover; }
+.screenshot img { border: 1px solid var(--rule); background: #fff; }
+.tall { max-width: 460px; }
+
+/* ---------- Simple key/value lists ---------- */
+.kv { list-style: none; }
+.kv li { display: grid; grid-template-columns: 170px 1fr; gap: 16px; padding: 9px 0; border-bottom: 1px dashed var(--rule); }
+.kv li:last-child { border-bottom: none; }
+.kv .k { font-family: "IBM Plex Mono", monospace; font-size: 14px; color: var(--muted); padding-top: 2px; }
+
+/* ---------- Project rows ---------- */
+.project-list { list-style: none; }
+.project-list > li { display: grid; grid-template-columns: 240px 1fr; gap: 28px; padding: 24px 0; border-bottom: 1px solid var(--rule); }
+.project-list > li:first-child { padding-top: 6px; }
+.project-list > li:last-child { border-bottom: none; }
+.project-list img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; border: 1px solid var(--rule); }
+.project-list h3 { margin: 0 0 4px; font-size: 20px; }
+.project-list h3 a { text-decoration: none; }
+.project-list h3 a:hover { text-decoration: underline; text-decoration-color: var(--gold); }
+.project-list .tools { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--muted); }
+.project-list .placeholder { width: 100%; aspect-ratio: 4 / 3; border: 2px dashed var(--rule); border-radius: 4px; display: grid; place-items: center; color: var(--muted); font-family: "IBM Plex Mono", monospace; font-size: 13px; }
+
+/* ---------- Timeline (experience / awards) ---------- */
+.timeline { list-style: none; }
+.timeline li { display: grid; grid-template-columns: 170px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--rule); }
+.timeline li:last-child { border-bottom: none; }
+.timeline .when { font-family: "IBM Plex Mono", monospace; font-size: 14px; color: var(--muted); padding-top: 2px; }
+.timeline .role { font-weight: 600; }
+.timeline .org { color: var(--navy); font-weight: 400; }
+.timeline p { color: var(--muted); margin: 4px 0 0; font-size: 16px; }
+
+/* ---------- Roadmap ---------- */
+.roadmap { list-style: none; border-left: 2px solid var(--gold); margin-left: 6px; }
+.roadmap > li { position: relative; padding: 0 0 26px 26px; }
+.roadmap > li::before { content: ""; position: absolute; left: -8px; top: 7px; width: 14px; height: 14px; border-radius: 50%; background: var(--paper); border: 2px solid var(--navy); }
+.roadmap > li.done::before { background: var(--navy); }
+.roadmap .when { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: #8a7a3d; }
+.roadmap h3 { margin: 2px 0 6px; }
+.roadmap ul { padding-left: 20px; color: var(--muted); }
+.roadmap ul li { margin-bottom: 4px; }
+
+/* ---------- Resume ---------- */
+.resume-frame { width: 100%; height: 980px; border: 1px solid var(--rule); background: #fff; }
+.btn { display: inline-block; background: var(--navy); color: #fff; padding: 10px 18px; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 15px; margin-right: 10px; }
+.btn:hover { background: #00213d; color: #fff; }
+
+/* ---------- Project page meta ---------- */
+.meta { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 28px; margin: 18px 0 6px; font-size: 15px; }
+.meta b { font-family: "IBM Plex Mono", monospace; font-weight: 400; font-size: 13px; color: var(--muted); margin-right: 6px; }
+.article h2 { margin-top: 38px; }
+.back { font-size: 15px; }
+
+/* ---------- Video ---------- */
+.video { position: relative; aspect-ratio: 16 / 9; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ---------- Footer ---------- */
+footer { margin-top: 40px; padding: 26px 0 40px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--muted); }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+footer a { margin-left: 16px; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 780px) {
+  .intro, .two-col, .side-photo { grid-template-columns: 1fr; gap: 26px; }
+  .intro { padding-top: 36px; }
+  .intro figure, .side-photo figure { max-width: 300px; }
+  .project-list > li { grid-template-columns: 1fr; gap: 14px; }
+  .kv li, .timeline li { grid-template-columns: 1fr; gap: 2px; }
+  .resume-frame { height: 620px; }
+  footer a { margin: 0 16px 0 0; }
+}

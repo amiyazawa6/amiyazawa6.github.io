@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Alex Miyazawa</title>
+  <meta name="description" content="Projects by Alex Miyazawa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a href="index.html" class="name">Alex Miyazawa</a>
+      <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="goals.html">Career Goals</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- To add a project: copy a project page (like display-board.html), rename and edit it,
+         then copy one <li> block below and point it at the new page. -->
+    <div class="wrap">
+      <section class="page-top">
+        <h1>Projects</h1>
+        <p class="muted" style="margin-top:10px;">What I've worked on so far at Georgia Tech, on my own and with Solar Racing. Newest at the top. I'll keep adding to this.</p>
+      </section>
+
+      <section class="block">
+        <ul class="project-list">
+      <li>
+        <a href="discovery-project.html"><img src="images/discovery-hero.jpg" alt="Wokwi model of my alarm clock circuit" /></a>
+        <div>
+          <div class="kicker">Discovery Project · Fall 2026</div>
+          <h3><a href="discovery-project.html">Arduino digital alarm clock</a></h3>
+          <p>My first project of my own. It's a digital clock with an alarm, running on an Arduino Nano. I wrote the
+             firmware as a state machine, tested it in the Wokwi simulator, and I'm now wiring it up on a breadboard.</p>
+          <div class="tools">Arduino · C++ · Wokwi · DS1307 RTC · TM1637 display · GitHub</div>
+        </div>
+      </li>
+      <li>
+        <a href="display-board.html"><img src="images/display-board.jpg" alt="Solar car driver display board" /></a>
+        <div>
+          <div class="kicker">Solar Racing · Fall 2026</div>
+          <h3><a href="display-board.html">Display board firmware</a></h3>
+          <p>A partner and I updated the driver display firmware for Halo, the team's new car, and tested each change on the bench with CANalyzer.</p>
+          <div class="tools">C · TI Tiva · CAN bus · CANalyzer</div>
+        </div>
+      </li>
+      <li>
+        <a href="sensor-board.html"><img src="images/sensor-board.jpg" alt="Analog sensor board" /></a>
+        <div>
+          <div class="kicker">Solar Racing · Fall 2026</div>
+          <h3><a href="sensor-board.html">Analog sensor board</a></h3>
+          <p>I assembled an analog sensor board from a bare PCB, then tracked down every bad joint and wrong part with a multimeter and the KiCad layout.</p>
+          <div class="tools">Solder paste · Reflow oven · Hand soldering · KiCad · Multimeter</div>
+        </div>
+      </li>
+          <li>
+            <div class="placeholder">coming spring 2027</div>
+            <div>
+              <div class="kicker">Solar Racing · Up next</div>
+              <h3>Custom PCB and schematic</h3>
+              <p>Once the display board firmware is moved over to STMLib, the next step is designing a new board
+                 for it from scratch, both the schematic and the PCB. It's the most hardware-heavy thing I'll have done
+                 so far, and I'm looking forward to it.</p>
+              <div class="tools">KiCad · STM32 · schematic capture · PCB layout</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Alex Miyazawa · Georgia Tech EE · <span class="year"></span></span>
+      <span><a href="mailto:hmiyazawa6@gatech.edu">Email</a><a href="https://www.linkedin.com/in/alex-miyazawa">LinkedIn</a><a href="resume.pdf">Resume (PDF)</a></span>
+    </div>
+  </footer>
+
+  <script>document.querySelector(".year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

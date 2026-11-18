@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume | Alex Miyazawa</title>
+  <meta name="description" content="Resume of Alex Miyazawa, Georgia Tech Electrical Engineering." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a href="index.html" class="name">Alex Miyazawa</a>
+      <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="goals.html">Career Goals</a></li>
+        <li><a href="resume.html" aria-current="page">Resume</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="wrap">
+      <section class="page-top">
+        <h1>Resume</h1>
+        <p style="margin-top:18px;"><a class="btn" href="resume.pdf" download>Download PDF</a> <a href="resume.pdf">Open in a new tab</a></p>
+      </section>
+
+      <section class="block">
+        <iframe class="resume-frame" src="resume.pdf" title="Resume of Alex Miyazawa"></iframe>
+      </section>
+
+      <section class="block">
+        <h2>Experience</h2>
+        <ul class="timeline">
+          <li>
+            <div class="when">Fall 2026 to now</div>
+            <div>
+              <div class="role">Georgia Tech Solar Racing <span class="org">· Electrical team member</span></div>
+              <p>Updated display board firmware for the new car, Halo, and tested it over CAN with CANalyzer.
+                 Assembled an analog sensor board using solder paste, reflow, and hand soldering, and checked every
+                 connection against the KiCad design.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">Sep 2025 to Aug 2026</div>
+            <div>
+              <div class="role">Math tutor <span class="org">· Self-employed</span></div>
+              <p>90+ hours tutoring Algebra through Precalculus, with individual lesson plans for each student.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">Jun 2025 to Jun 2026</div>
+            <div>
+              <div class="role">Personal soccer coach <span class="org">· Marietta, GA</span></div>
+              <p>Individual and small-group training for youth players.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">Jun 2025, Jan 2026</div>
+            <div>
+              <div class="role">Election assistant <span class="org">· Consulate General of Japan in Atlanta</span></div>
+              <p>Helped 1,000+ voters across two national elections in English and Japanese. Verified ballots and
+                 paperwork, and served as an Election Poll Observer.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">Sep 2024, Sep 2025</div>
+            <div>
+              <div class="role">Kitchen organizer <span class="org">· Sushi Yoko at Japan Fest</span></div>
+              <p>Ran a station in a busy festival kitchen and kept it up to health and safety standards.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <h2>Awards</h2>
+        <ul class="timeline">
+          <li><div class="when">2026</div><div><div class="role">ICDC competitor <span class="org">· DECA</span></div>
+            <p>Represented Georgia at DECA's International Career Development Conference.</p></div></li>
+          <li><div class="when">2024, 2026</div><div><div class="role">Trojan Award <span class="org">· Lassiter Varsity Soccer</span></div>
+            <p>Also received the $1,250 Libby Scholarship from the program.</p></div></li>
+          <li><div class="when">2024, 2025</div><div><div class="role">Regional tournament champions <span class="org">· North Atlanta Soccer Association</span></div>
+            <p>Won several regional tournaments and reached the semifinals of the US Club Finals in Denver, Colorado.</p></div></li>
+          <li><div class="when">2025</div><div><div class="role">14th at State <span class="org">· DECA</span></div></div></li>
+          <li><div class="when">2024</div><div><div class="role">3rd at Regionals <span class="org">· DECA</span></div></div></li>
+        </ul>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Alex Miyazawa · Georgia Tech EE · <span class="year"></span></span>
+      <span><a href="mailto:hmiyazawa6@gatech.edu">Email</a><a href="https://www.linkedin.com/in/alex-miyazawa">LinkedIn</a><a href="resume.pdf">Resume (PDF)</a></span>
+    </div>
+  </footer>
+
+  <script>document.querySelector(".year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

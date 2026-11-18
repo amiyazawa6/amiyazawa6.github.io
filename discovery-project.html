@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discovery Project: Arduino Alarm Clock | Alex Miyazawa</title>
+  <meta name="description" content="Discovery Project: an Arduino Nano digital alarm clock." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a href="index.html" class="name">Alex Miyazawa</a>
+      <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="goals.html">Career Goals</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="wrap narrow">
+      <section class="page-top">
+        <p class="back"><a href="projects.html">← Projects</a></p>
+        <div class="kicker" style="margin-top:22px;">Discovery Project · Fall 2026</div>
+        <h1>Arduino digital alarm clock</h1>
+        <p class="muted" style="margin-top:12px; font-size:19px;">A digital clock with a settable alarm, built around an Arduino Nano. My first engineering project of my own.</p>
+        <ul class="meta">
+          <li><b>Role</b>Solo</li>
+          <li><b>Status</b>Building the hardware</li>
+          <li><b>Parts</b>Arduino Nano, DS1307 RTC, TM1637 display, 3 buttons, buzzer</li>
+          <li><b>Tools</b>Wokwi, Arduino IDE, GitHub</li>
+        </ul>
+      </section>
+
+      <section class="block article">
+        <figure class="wide screenshot" style="margin-top:0;">
+          <img src="images/discovery-hero.jpg" alt="Wokwi model of the alarm clock circuit" />
+          <figcaption>My Wokwi model of the circuit: a 4-digit display, a DS1307 real-time clock, three buttons, and a buzzer.</figcaption>
+        </figure>
+
+        <h2 style="margin-top:20px;">Overview</h2>
+        <p>
+          For my Discovery Project I built a digital alarm clock on an Arduino Nano. It's the first thing I've built
+          on my own as an EE student, and I started it with basically no experience. I wrote and tested the firmware in
+          the Wokwi simulator first, kept every version on GitHub, and now I'm putting the real circuit together on a
+          breadboard. After that I want to design a PCB for it.
+        </p>
+
+        <h2>The Problem</h2>
+        <p>
+          Before Georgia Tech I had never built an electronic device. I wanted one project that would make me go
+          through the whole process at least once: writing firmware, laying out a circuit, debugging it, and ending up
+          with real hardware.
+        </p>
+        <p>
+          An alarm clock seemed like the right size. Everyone knows what it should do, but it still has real
+          requirements. It has to keep time even when it's unplugged, show the time clearly, let you set both the time
+          and an alarm with only a few buttons, and go off at the right minute. So my goal was simple: take an
+          everyday device from an idea to working hardware, starting from zero.
+        </p>
+
+        <h2>The Process</h2>
+        <h3>Modeling it in Wokwi</h3>
+        <p>
+          I didn't want to buy parts before I knew the design worked, so I started in Wokwi, an online electronics
+          simulator. The circuit has four main parts. A DS1307 real-time clock module keeps the time. A TM1637 4-digit
+          display shows it. Three buttons (Mode, Up, and Down) let you set things. A buzzer is the alarm. I modeled it on an Arduino Uno, which has the same ATmega328P chip as the Nano I'm using for the real build.
+        </p>
+
+        <h3>Writing the firmware as a state machine</h3>
+        <p>
+          The clock is always in one of five states: showing the time, setting the hour, setting the minute, setting
+          the alarm hour, or setting the alarm minute. Mode moves to the next state, and Up and Down change the number.
+          On top of that, the code debounces the buttons, blinks the colon once a second, and keeps track of whether the
+          alarm is ringing or has been dismissed. We were covering finite state machines in ECE 2020 at the same time,
+          so it was a good chance to use something from class right away.
+        </p>
+        <figure class="screenshot">
+          <img src="images/clock-code.png" alt="Arduino code defining the clock's five states" />
+          <figcaption>The top of my firmware: pin assignments, the five clock states, and the alarm variables.</figcaption>
+        </figure>
+
+        <h3>Using GitHub</h3>
+        <p>
+          I pushed my code to GitHub as I went. That gave me a record of how the project changed and a set of
+          checkpoints I could go back to whenever an edit broke something, which happened more than once. It's a
+          habit I'm keeping for every project.
+        </p>
+
+        <h3>Debugging</h3>
+        <p>
+          A lot of the code didn't work the first time, especially the alarm logic. I fixed it by changing one thing
+          at a time, rerunning the simulation, and watching what the clock actually did versus what I expected. It
+          was slow, but my code got noticeably cleaner because of it.
+        </p>
+
+        <h3>Moving to real hardware</h3>
+        <p>
+          Once the simulated version worked, I bought the actual parts and started wiring them onto a breadboard.
+          This is where the soldering and multimeter practice from Solar Racing comes in.
+        </p>
+        <!-- Add a breadboard photo here once you have one:
+        <figure class="wide">
+          <img src="images/breadboard.jpg" alt="Alarm clock wired on a breadboard" />
+          <figcaption>The clock wired up on a breadboard</figcaption>
+        </figure>
+        -->
+
+        <h2>The Outcome</h2>
+        <p>
+          The firmware is done and works in simulation. The clock keeps time, the set modes work, and the alarm goes
+          off and can be dismissed. The breadboard build is in progress.
+          <!-- UPDATE before the Showcase: describe the working hardware and how you tested it. -->
+        </p>
+        <p>
+          Next I'll draw a proper schematic, design a PCB, and order my own board. The end goal is a finished clock that I actually use every day.
+        </p>
+        <!-- Add a photo or video of the finished clock here before the Showcase. -->
+
+        <h2>What I Learned</h2>
+        <p>
+          On the technical side, I learned to write and simulate firmware, structure a program as a state machine,
+          and use version control. The bigger thing for me was that I didn't need to know everything before starting.
+          I figured out most of it by getting stuck and working my way out. It also confirmed that I like the hardware
+          side of EE, which is part of why I'm heading toward circuits and chip design.
+        </p>
+
+        <!-- OPTIONAL VIDEO: upload to YouTube, click Share, then Embed, and paste the URL into src below. Then remove these comment marks.
+        <h2>Demo video</h2>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Alarm clock demo" allowfullscreen></iframe>
+        </div>
+        -->
+
+        <p style="margin-top:40px;" class="back"><a href="projects.html">← Back to projects</a></p>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Alex Miyazawa · Georgia Tech EE · <span class="year"></span></span>
+      <span><a href="mailto:hmiyazawa6@gatech.edu">Email</a><a href="https://www.linkedin.com/in/alex-miyazawa">LinkedIn</a><a href="resume.pdf">Resume (PDF)</a></span>
+    </div>
+  </footer>
+
+  <script>document.querySelector(".year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
